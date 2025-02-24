@@ -1,4 +1,7 @@
+import ManagePosts from '../components/ManagePosts';
+
 export default function PostsPage() {
     return (
-        <h1>Posts</h1>)
+        <ManagePosts />
+    );
 }
