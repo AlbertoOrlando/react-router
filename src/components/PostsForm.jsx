@@ -6,7 +6,7 @@ const initialFormData = {
     title: "",
     image: "",
     content: "",
-    tags: []
+    tags: ""
 }
 
 export default function PostsForm() {

@@ -5,6 +5,12 @@ header {
     padding: 20px;
 }
 
+#titolo-posts {
+    font-size: 2.5em;
+    margin: 5px 0px;
+    text-align: center;
+}
+
 .posts_container {
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +28,41 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.posts-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botton-prev {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.botton-next {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.dettaglioPost {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 20%;
+}
+
 
 #categoria {
     color: gray;
@@ -47,13 +88,17 @@ header {
     margin: 10px 0;
 }
 
+#icona:hover {
+    color: red;
+}
+
 #contenuto {
     font-size: 20px;
     margin: 10px 0;
 }
 
 header h2 {
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .lista_Header {
@@ -67,7 +112,7 @@ header h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .lista_Header li:hover {

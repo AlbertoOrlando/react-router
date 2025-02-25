@@ -27,8 +27,8 @@ export default function PostsDetail() {
                 <p id="categoria">{post.tags}</p>
             </li>
             <nav>
-                <Link to={`/posts/${parseInt(id) - 1}`}>Prev Post</Link>
-                <Link to={`/posts/${parseInt(id) + 1}`}>Next Post</Link>
+                <Link className="botton-prev" to={`/posts/${parseInt(id) - 1}`}>Prev Post</Link>
+                <Link className="botton-next" to={`/posts/${parseInt(id) + 1}`}>Next Post</Link>
             </nav>
         </>
     )
