@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
@@ -50,6 +51,7 @@ export default function GestionalePost() {
                         <img id="img_post" src={post.image} alt={post.title} />
                         <p id="contenuto">{post.content}</p>
                         <p id="categoria">{post.tags}</p>
+                        <Link className="dettaglioPost" to={`/posts/${post.id}`}>Vai al post</Link>
                         <span id="icona"><FontAwesomeIcon icon={faTrashCan} onClick={() => rimuoviPost(post.id)
                         } /></span>
                     </li>

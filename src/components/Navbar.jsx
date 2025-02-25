@@ -10,6 +10,9 @@ export default function Navbar() {
                 <NavLink to="/posts">Posts</NavLink>
             </li>
             <li>
+                <NavLink to="/posts/create">Create Post</NavLink>
+            </li>
+            <li>
                 <NavLink to="/contact">Contacts</NavLink>
             </li>
             <li>
