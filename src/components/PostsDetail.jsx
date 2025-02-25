@@ -9,7 +9,7 @@ export default function PostsDetail() {
     const [post, setPost] = useState({});
 
     function fetchPost() {
-        axios.get(`http://localhost:3000/posts/${idPost}`)
+        axios.get(`http://localhost:3000/posts/${id}`)
             .then(res => setPost(res.data))
             .catch(err => console.error(err));
     }
