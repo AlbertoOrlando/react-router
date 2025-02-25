@@ -20,10 +20,12 @@ export default function PostsDetail() {
 
     return (
         <>
-            <h1>Post Detail {post.title}</h1>
-            <img src={post.image} alt={post.title} />
-            <p>{post.content}</p>
-            <p>{post.tags}</p>
+            <li className="post" key={post.id}>
+                <h2 id="titolo">{post.title}</h2>
+                <img id="img_post" src={post.image} alt={post.title} />
+                <p id="contenuto">{post.content}</p>
+                <p id="categoria">{post.tags}</p>
+            </li>
             <nav>
                 <Link to={`/posts/${parseInt(id) - 1}`}>Prev Post</Link>
                 <Link to={`/posts/${parseInt(id) + 1}`}>Next Post</Link>

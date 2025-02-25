@@ -6,7 +6,7 @@ const initialFormData = {
     title: "",
     image: "",
     content: "",
-    tags: ""
+    tags: []
 }
 
 export default function PostsForm() {
@@ -20,7 +20,7 @@ export default function PostsForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/posts/", formData)
+        axios.post("http://localhost:3000/posts", formData)
             .then(res => {
                 console.log(res);
                 navigate("/posts");
@@ -37,7 +37,7 @@ export default function PostsForm() {
                     name="tags"
                     type="text"
                     value={formData.tags}
-                    placeholder="Categoria post"
+                    placeholder="Tags post"
                     onChange={handleFormData}
                     id="form_categoria"
                 />
@@ -45,9 +45,9 @@ export default function PostsForm() {
                     name="image"
                     type="text"
                     value={formData.image}
-                    placeholder="Titolo post"
+                    placeholder="URL img post"
                     onChange={handleFormData}
-                    id="form_titolo"
+                    id="form_img"
                 />
                 {/* valore titolo */}
                 <input
