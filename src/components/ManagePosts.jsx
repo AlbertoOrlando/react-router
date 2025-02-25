@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 // creazione GestionalePost
 export default function GestionalePost() {
@@ -22,6 +24,22 @@ export default function GestionalePost() {
     // richiamo la funzione di richiesta dati al caricamento del componente solo al primo rendering
     useEffect(fetchPosts, []);
 
+    const rimuoviPost = (idPost) => {
+        // creiamo nuovo array senza il post che non cancelliamo
+        const nuoviPosts = posts.filter((post) => post.id !== idPost)
+        // chiamata ad API sulla rotta di delete
+        axios.delete(`http://localhost:3000/posts/${idPost}`)
+            .then(res =>
+                console.log(res),
+                // lo sostituiamo anche nel FE
+                setPosts(nuoviPosts)
+            )
+            .catch(err => console.log(err))
+
+
+    }
+
+
     return (
         <div>
             <h1>Posts</h1>
@@ -32,6 +50,8 @@ export default function GestionalePost() {
                         <img id="img_post" src={post.image} alt={post.title} />
                         <p id="contenuto">{post.content}</p>
                         <p id="categoria">{post.tags}</p>
+                        <span id="icona"><FontAwesomeIcon icon={faTrashCan} onClick={() => rimuoviPost(post.id)
+                        } /></span>
                     </li>
                 ))}
             </ul>
